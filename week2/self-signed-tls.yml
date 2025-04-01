@@ -1,0 +1,55 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: coffee-tls
+  namespace: default
+spec:
+  commonName: coffee.myweb.com
+  dnsNames:
+    - coffee.myweb.com
+  secretName: coffee-tls
+  issuerRef:
+    name: myweb-ca-issuer
+    kind: Issuer
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: tea-tls
+  namespace: default
+spec:
+  commonName: tea.myweb.com
+  dnsNames:
+    - tea.myweb.com
+  secretName: tea-tls
+  issuerRef:
+    name: myweb-ca-issuer
+    kind: Issuer
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: www-juice-tls
+  namespace: default
+spec:
+  commonName: www.myweb.com
+  dnsNames:
+    - www.myweb.com
+  secretName: www-juice-tls
+  issuerRef:
+    name: myweb-ca-issuer
+    kind: Issuer
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: www-water-tls
+  namespace: default
+spec:
+  commonName: www.myweb.com
+  dnsNames:
+    - www.myweb.com
+  secretName: www-water-tls
+  issuerRef:
+    name: myweb-ca-issuer
+    kind: Issuer

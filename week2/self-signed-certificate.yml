@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: myweb-ca
+  namespace: default
+spec:
+  isCA: true
+  commonName: myweb-ca
+  secretName: myweb-ca-keypair
+  issuerRef:
+    name: selfsigned-cluster-issuer
+    kind: ClusterIssuer
